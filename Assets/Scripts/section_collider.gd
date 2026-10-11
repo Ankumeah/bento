@@ -12,9 +12,9 @@ func _ready() -> void:
 func _on_lid_removed() -> void:
 	self.input_pickable = true
 
-func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if (event is InputEventMouseButton or event is InputEventScreenTouch) and not event.pressed:
-		print($".", " clicked")
+		print($".".name, " clicked")
 
 		var label := get_node_or_null("../click_lable")
 		if label != null:
